@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>前端店小二的博客</title>
+  
+  
+  <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://waitinhope.github.io/"/>
+  <updated>2021-03-04T17:03:31.613Z</updated>
+  <id>https://waitinhope.github.io/</id>
+  
+  <author>
+    <name>Zhang Zhendong</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>myFirstBlog</title>
+    <link href="https://waitinhope.github.io/2021/03/05/myfirstblog/"/>
+    <id>https://waitinhope.github.io/2021/03/05/myfirstblog/</id>
+    <published>2021-03-04T17:03:31.000Z</published>
+    <updated>2021-03-04T17:03:31.613Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://waitinhope.github.io/2021/03/05/hello-world/"/>
+    <id>https://waitinhope.github.io/2021/03/05/hello-world/</id>
+    <published>2021-03-04T16:59:13.157Z</published>
+    <updated>2021-03-04T16:59:13.157Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
