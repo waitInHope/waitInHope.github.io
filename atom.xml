@@ -6,7 +6,7 @@
   <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
   
   <link href="https://waitinhope.github.io/"/>
-  <updated>2021-03-11T13:52:46.373Z</updated>
+  <updated>2021-03-11T16:20:25.701Z</updated>
   <id>https://waitinhope.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://waitinhope.github.io/2021/03/11/20210311-es6-2/"/>
+    <id>https://waitinhope.github.io/2021/03/11/20210311-es6-2/</id>
+    <published>2021-03-11T14:17:59.805Z</published>
+    <updated>2021-03-11T16:20:25.701Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;JS异步编程&quot;&gt;&lt;a href=&quot;#JS异步编程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ES6 学习使用经验分享</title>
