@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>前端店小二的博客</title>
+  <title>前端店小二</title>
   
-  
+  <subtitle>持续学习+沉淀总结</subtitle>
   <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
   
   <link href="https://waitinhope.github.io/"/>
-  <updated>2021-03-11T16:20:25.701Z</updated>
+  <updated>2021-03-12T15:53:45.239Z</updated>
   <id>https://waitinhope.github.io/</id>
   
   <author>
@@ -17,18 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://waitinhope.github.io/2021/03/11/20210311-es6-2/"/>
-    <id>https://waitinhope.github.io/2021/03/11/20210311-es6-2/</id>
-    <published>2021-03-11T14:17:59.805Z</published>
-    <updated>2021-03-11T16:20:25.701Z</updated>
+    <title>JS闭包</title>
+    <link href="https://waitinhope.github.io/2021/03/12/20210312-js-2/"/>
+    <id>https://waitinhope.github.io/2021/03/12/20210312-js-2/</id>
+    <published>2021-03-12T15:48:00.000Z</published>
+    <updated>2021-03-12T15:53:45.239Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;JS异步编程&quot;&gt;&lt;a href=&quot;#JS异步编程&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。&quot;&gt;&lt;a href=&quot;#引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS异步编程</title>
+    <link href="https://waitinhope.github.io/2021/03/12/20210311-js-1/"/>
+    <id>https://waitinhope.github.io/2021/03/12/20210311-js-1/</id>
+    <published>2021-03-11T16:56:00.000Z</published>
+    <updated>2021-03-12T15:49:21.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;引言&lt;/strong&gt;：鉴于上一章的内容过于简单，本篇文章用于深挖JS的异步编程概念&lt;/p&gt;
+&lt;h4 id=&quot;1-“异步”的概念&quot;&gt;&lt;a href=&quot;#1-“异步”的概念&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -41,8 +63,8 @@
     <title>ES6 学习使用经验分享</title>
     <link href="https://waitinhope.github.io/2021/03/11/20210311-es6-1/"/>
     <id>https://waitinhope.github.io/2021/03/11/20210311-es6-1/</id>
-    <published>2021-03-10T16:56:00.000Z</published>
-    <updated>2021-03-11T13:52:46.373Z</updated>
+    <published>2021-03-11T03:00:00.000Z</published>
+    <updated>2021-03-12T15:37:12.519Z</updated>
     
     
       

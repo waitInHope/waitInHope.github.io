@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端店小二的博客">
+    <meta name="keywords" content="JS闭包, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>前端店小二的博客</title>
+    <title>JS闭包 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="前端店小二的博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="前端店小二" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -44,7 +44,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">前端店小二的博客</span>
+                    <span class="logo-span">前端店小二</span>
                 </a>
             </div>
             
@@ -143,7 +143,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">前端店小二的博客</div>
+        <div class="logo-name">前端店小二</div>
         <div class="logo-desc">
             
             分享前端知识
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">JS闭包</h1>
                 </div>
             </div>
         </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-11
+                    2021-03-12
                 </div>
                 
 
@@ -465,13 +465,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="JS异步编程"><a href="#JS异步编程" class="headerlink" title="JS异步编程"></a>JS异步编程</h3><p><strong>引言</strong>：鉴于上一章的内容过于简单，本篇文章用于深挖JS的异步编程概念</p>
-<h4 id="1-“异步”的概念"><a href="#1-“异步”的概念" class="headerlink" title="1.“异步”的概念"></a>1.“异步”的概念</h4><p>​        JS直到ES6才正式建立异步机制，这里的“异步”是指现在和将来的时间间隙，采用事件循环机制，这里JS引擎只负责按需执行代码块，而事件调度由宿主环境负责。</p>
-<p>​        这里的“异步”和“并行”的概念完全不同，并行指能够同时执行的代码块，在JS中不存在“并行”，JS不允许对共享内存并行访问和修改，所以JS的不同事件之间一定有执行的先后顺序，这就是JS的<u><strong>单线程特性</strong></u>。</p>
-<p>​        但是函数(事件)之间的执行顺序可以具有不确定性，这就是JS的**<u>竞态条件特性</u>**。</p>
-<h4 id="“事件队列”和“任务队列”"><a href="#“事件队列”和“任务队列”" class="headerlink" title="“事件队列”和“任务队列”"></a>“事件队列”和“任务队列”</h4><p>​        JS的事件循环机制通过<strong>事件队列</strong>（FCFS）来实现，而<strong>任务队列</strong>是挂载到事件队列当前tick之后的队列，所以它的执行优先级要高于下一个tick中的事件，即“插队”，表示尽可能早的将来。</p>
-<p>​        Promise基于任务队列，而setTimeout基于事件队列，所以同一个代码块内Promise会优于setTimeout执行。</p>
-
+                <h3 id="引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。"><a href="#引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。" class="headerlink" title="引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。"></a>引言：“闭包”是JS中一个老生常谈的话题，但是又不可避免地在开发过程中会使用到闭包，这也要求我们必须理解和掌握它。</h3><h4 id="1-什么是“闭包”"><a href="#1-什么是“闭包”" class="headerlink" title="1.什么是“闭包”"></a>1.什么是“闭包”</h4>
                 
             </div>
             <hr/>
@@ -487,7 +481,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Zhang Zhendong</a>
+                    <a href="/about" rel="external nofollow noreferrer">张振东</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -497,7 +491,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/03/11/20210311-es6-2/">https://waitinhope.github.io/2021/03/11/20210311-es6-2/</a>
+                    <a href="https://waitinhope.github.io/2021/03/12/20210312-js-2/">https://waitinhope.github.io/2021/03/12/20210312-js-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,7 +504,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Zhang Zhendong</a>
+                    <a href="/about" target="_blank">张振东</a>
                     !
                 </span>
             </div>
@@ -709,13 +703,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/03/11/20210311-es6-2/">
+                <a href="/2021/03/12/20210312-js-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JS闭包">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">JS闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -726,12 +720,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Zhang Zhendong
+                            张振东
                             
                         </span>
                     </div>
@@ -747,13 +741,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/11/20210311-es6-1/">
+                <a href="/2021/03/12/20210311-js-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ES6 学习使用经验分享">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JS异步编程">
                         
-                        <span class="card-title">ES6 学习使用经验分享</span>
+                        <span class="card-title">JS异步编程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -764,7 +758,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
                             </span>
                         <span class="publish-author">
                             
