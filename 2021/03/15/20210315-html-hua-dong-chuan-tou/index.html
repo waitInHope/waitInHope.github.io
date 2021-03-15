@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Promise的用法, 前端店小二">
+    <meta name="keywords" content="解决弹框滑动穿透问题, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Promise的用法 | 前端店小二</title>
+    <title>解决弹框滑动穿透问题 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Promise的用法</h1>
+                    <h1 class="description center-align post-title">解决弹框滑动穿透问题</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Promise/">
-                                <span class="chip bg-color">Promise</span>
+                            <a href="/tags/%E6%BB%91%E5%8A%A8%E7%A9%BF%E9%80%8F/">
+                                <span class="chip bg-color">滑动穿透</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ES6/" class="post-category">
-                                ES6
+                            <a href="/categories/html/" class="post-category">
+                                html
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-14
+                    2021-03-15
                 </div>
                 
 
@@ -478,15 +478,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="引言：Promise是ES6中新增加的处理异步的方式，使用起来更加符合书写习惯"><a href="#引言：Promise是ES6中新增加的处理异步的方式，使用起来更加符合书写习惯" class="headerlink" title="引言：Promise是ES6中新增加的处理异步的方式，使用起来更加符合书写习惯"></a>引言：Promise是ES6中新增加的处理异步的方式，使用起来更加符合书写习惯</h3><h4 id="1-“Promise”的用法非常简单"><a href="#1-“Promise”的用法非常简单" class="headerlink" title="1.“Promise”的用法非常简单"></a>1.“Promise”的用法非常简单</h4><p>​            Promise的含义就是“承诺”，表示将来一段时间后会发生的任务，它是一个函数，同时又接收一个函数作为参数，而这个函数参数本身又有resolve()和reject()这两个函数作为参数，是不是听起来非常绕口，那我用代码的形式表示出来</p>
-<p><code>new Promise((resolve, reject) =&gt; &#123;</code></p>
-<p>​    <code>if(res) =&gt; &#123;</code></p>
-<p>​        <code>resolve(res)</code></p>
-<p>​    <code>&#125; else &#123;</code></p>
-<p>​        <code>reject(res)</code></p>
-<p>​    <code>&#125;</code></p>
-<p><code>&#125;)</code></p>
-<p>这样一个Promise实例就创建出来了，resolve()表示成功时执行的回调，reject()表示失败时的回调</p>
+                <h3 id="引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题"><a href="#引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题" class="headerlink" title="引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题"></a>引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题</h3><h4 id="1-什么是“滑动穿透”"><a href="#1-什么是“滑动穿透”" class="headerlink" title="1.什么是“滑动穿透”"></a>1.什么是“滑动穿透”</h4><p>​        针对手机端出现弹框的这类场景，弹框后面的遮罩层依然可以触发滑动效果，当然可能大部分用户不会在页面出现弹框后还会去滑动它。</p>
+<p>​        但是笔者就遇到过这种需求，弹框外层是一个列表，允许滑动，而弹框内文字比较多也需要允许用户滑动，如果用户想看弹框内容就一定会有滑动事件，这样就会导致一个问题，用户在滑动的时候发现弹框后面的遮罩层也在跟着滑动，导致使用体验就很差了。</p>
+<h4 id="2-如何解决“滑动穿透”"><a href="#2-如何解决“滑动穿透”" class="headerlink" title="2.如何解决“滑动穿透”"></a>2.如何解决“滑动穿透”</h4><p>​        从我的实际解决操作出发有两种方法：</p>
+<ol>
+<li><p>overflow:hidden+v-transfer-dom</p>
+<p>由于在开发过程中使用的是Vue框架，会用到v-transfer-dom指令来提升弹框组件的位置到根节点下(也就是body节点下)，这样就可以保证弹框在遮罩层的上层，然后在弹框调起之前将遮罩层的overflow属性设置为hidden，当用户滑动的时候就只会触发弹框内的滑动事件。</p>
+</li>
+<li><p>@touchmove=event.preventDefault()</p>
+<p>这种方法的原理就是在弹框调起时禁用掉遮罩层的滑动监听事件，这样用户在滑动时就会只触发弹框内的滑动监听函数，遮罩层无法发生滑动</p>
+<p>作为一名深受滑动穿透问题困扰的小前端，我还要补充一个容易被大家忽视的问题，ios设备存在一个原生滑动事件，就是脱离页面逻辑之外的滑动，通俗地讲是用户可以带着整个页面上下滑动，经过尝试我发现只有使用@touchmove=event.preventDefault()可以一举多得，在禁用掉遮罩层的滑动监听同时，也解决了ios原生的滑动事件，不过为了保险起见，笔者一般都是同时使用以上两种方法来解决滑动穿透问题。</p>
+</li>
+</ol>
 
                 
             </div>
@@ -513,7 +516,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/03/14/20210314-es6-promise/">https://waitinhope.github.io/2021/03/14/20210314-es6-promise/</a>
+                    <a href="https://waitinhope.github.io/2021/03/15/20210315-html-hua-dong-chuan-tou/">https://waitinhope.github.io/2021/03/15/20210315-html-hua-dong-chuan-tou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,8 +554,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Promise/">
-                                    <span class="chip bg-color">Promise</span>
+                                <a href="/tags/%E6%BB%91%E5%8A%A8%E7%A9%BF%E9%80%8F/">
+                                    <span class="chip bg-color">滑动穿透</span>
                                 </a>
                             
                         </div>
@@ -724,9 +727,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/15/20210315-html-hua-dong-chuan-tou/">
                     <div class="card-image">
@@ -744,9 +748,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -759,6 +763,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -777,13 +782,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/13/20210312-js-bi-bao/">
+                <a href="/2021/03/14/20210314-es6-promise/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JS闭包">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Promise的用法">
                         
-                        <span class="card-title">JS闭包</span>
+                        <span class="card-title">Promise的用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,14 +799,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS/" class="post-category">
-                                    JS
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                             
@@ -811,8 +816,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">闭包</span>
+                    <a href="/tags/Promise/">
+                        <span class="chip bg-color">Promise</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
   
   <link href="https://waitinhope.github.io/"/>
-  <updated>2021-03-14T17:39:24.489Z</updated>
+  <updated>2021-03-15T16:30:00.043Z</updated>
   <id>https://waitinhope.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决弹框滑动穿透问题</title>
+    <link href="https://waitinhope.github.io/2021/03/15/20210315-html-hua-dong-chuan-tou/"/>
+    <id>https://waitinhope.github.io/2021/03/15/20210315-html-hua-dong-chuan-tou/</id>
+    <published>2021-03-15T14:34:00.000Z</published>
+    <updated>2021-03-15T16:30:00.043Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题&quot;&gt;&lt;a href=&quot;#引言：手机端开发页面过程中，如果有使用到弹框，就不可避免的会遇到滑动穿透的问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="html" scheme="https://waitinhope.github.io/categories/html/"/>
+    
+    
+    <category term="滑动穿透" scheme="https://waitinhope.github.io/tags/%E6%BB%91%E5%8A%A8%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Promise的用法</title>
