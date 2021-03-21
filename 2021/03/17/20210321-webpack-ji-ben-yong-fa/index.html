@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="flex布局, 前端店小二">
+    <meta name="keywords" content="webpakc基本用法, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>flex布局 | 前端店小二</title>
+    <title>webpakc基本用法 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">flex布局</h1>
+                    <h1 class="description center-align post-title">webpakc基本用法</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/flex%E5%B8%83%E5%B1%80/">
-                                <span class="chip bg-color">flex布局</span>
+                            <a href="/tags/webpakc/">
+                                <span class="chip bg-color">webpakc</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/css/" class="post-category">
-                                css
+                            <a href="/categories/webpack/" class="post-category">
+                                webpack
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-16
+                    2021-03-17
                 </div>
                 
 
@@ -478,31 +478,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="引言：使用flex弹性布局实现各种布局效果"><a href="#引言：使用flex弹性布局实现各种布局效果" class="headerlink" title="引言：使用flex弹性布局实现各种布局效果"></a>引言：使用flex弹性布局实现各种布局效果</h3><p>​    本篇文章只是基于笔者的具体开发经验来描述如何使用flex进行页面布局，完整详细的使用方法请参考<strong>阮一峰老师的博客</strong><a href>http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a></p>
-<p>​    先来说一下页面渲染时的文件流是从上到下，行内元素可以做到水平从左到右排列，而块状元素就只能从上到下，如果遇到多个div需要水平均匀排列的时候就会比较难受，在flex没有出现之前，可能大部分使用的方法就三种：</p>
-<p>1.使用相对定位   作为容器的父div使用relative，容器内的子div使用absolute定位</p>
-<p>2.使用float+margin 需要并排放置的div都使用float属性到同一水平位置，然后用margin去调整各个div之间的位置以达到期望效果</p>
-<p>3.装换块属性  作为容器的父div保持块元素不变，内部的子div都需要将块元素转化为内联元素</p>
-<p>现在总的看一下这三种方法，前两种都导致部分div元素的渲染脱离了文档流，这样在页面渲染过程中容易遇到边框和边距无法正常展示的坑，第三方方法确实也达到了使用效果，也没有脱离文档流，但是导致内部子元素失去了块元素的特性，如果遇到需求要实现水平垂直居中就很难受了</p>
-<p>​    正是因为上述的方法在处理水平垂直居中问题效果并不理想，所以才有了flex布局的出现。flex是块元素的一个属性，代表“弹性布局”的意思，相当于一个封装好各种布局方法的容器，常用的方法如下：</p>
-<p>​    <u>这里先声明一下flex中对主轴和交叉轴的定义，它们是相互垂直的两个方向轴，默认主轴是水平方向，交叉轴为竖直方向，当然也可以进行交换</u></p>
-<p>​    1.flex-direction 容器内项目的主轴方向  row-水平从左到右排列(<strong>默认值</strong>)  column-竖直从上到下</p>
-<p>​    2.justify-content 主轴方向上项目的对齐方式 </p>
-<p>​            center(居中)   </p>
-<p>​            flex-start(从主轴起点到终点紧密排列) </p>
-<p>​            flex-end(从主轴终点到起点紧密排列)  </p>
-<p>​            space-between(空白在中间，即项目两端对齐，项目间隔都相等) </p>
-<p>​            space-around(空白环绕，每个项目两侧间隔都相等)</p>
-<p>​    3.align-items 项目在交叉轴的对齐方式（实现“<strong>水平居中</strong>”对齐效果的关键）</p>
-<p>​            center(居中) </p>
-<p>​            flex-start(从交叉轴起点到终点紧密排列) </p>
-<p>​            flex-end(从交叉轴终点到起点紧密排列) </p>
-<p>​            stretch(默认值，如果项目未定义具体高度则设置为交叉轴高度)</p>
-<p>常用的页面布局使用上述这些属性和方法就应经完全可以实现了，但是flex还有其更加强大之处，这也让flex使用起来更加灵活多变，满足各类复杂需求</p>
-<p>​    针对项目本身的各种flex属性(<strong>下面属性需要设置在子元素上</strong>)：</p>
-<p>​        1.flex-grow 如果容器存在剩余空间，该项目是否需要放大(默认值是0，表示不需要放大)</p>
-<p>​        2.flex-shrink 如果容器内空间不足，该项目是否需要缩小(默认值是1，表示允许缩小项目去适应容器，0表示不允许缩小)</p>
-<p>​        3.align-self 允许单个项目与其他项目的排列方式不同，用来覆盖align-items属性(默认值为auto，表示继承父元素的align-items属性值)</p>
+                <h3 id="引言：webpack是前端主流的打包框架，这次主要描述webpack的基础知识和用法"><a href="#引言：webpack是前端主流的打包框架，这次主要描述webpack的基础知识和用法" class="headerlink" title="引言：webpack是前端主流的打包框架，这次主要描述webpack的基础知识和用法"></a>引言：webpack是前端主流的打包框架，这次主要描述webpack的基础知识和用法</h3><h4 id="1-打包配置文件的基本元素"><a href="#1-打包配置文件的基本元素" class="headerlink" title="1.打包配置文件的基本元素"></a>1.打包配置文件的基本元素</h4><p><code>module.export = &#123;</code></p>
+<p><code>input  // 输入</code></p>
+<p><code>output  // 输出</code></p>
+<p><code>module  // 加载器</code></p>
+<p><code>plugins  // 插件</code></p>
+<p><code>&#125;</code></p>
+<h4 id="2-构建包功能设计"><a href="#2-构建包功能设计" class="headerlink" title="2.构建包功能设计"></a>2.构建包功能设计</h4><p>​        通常会把构建包配置文件按照用途进行分离，有一个基础配置文件webpack.base.js，用来处理不同环境下共有的功能；然后是开发环境的配置文件weebpack.dev.js和生产环境的配置文件webpack.prod.js；有时候还需要配置服务端渲染，使用配置文件webpack.ssr.js。下面使用一张思维导图来进行具体说明</p>
+<p><img src="/2021/03/17/20210321-webpack-ji-ben-yong-fa/example.png"></p>
 
                 
             </div>
@@ -529,7 +512,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/03/16/20210316-css-flex-bu-ju/">https://waitinhope.github.io/2021/03/16/20210316-css-flex-bu-ju/</a>
+                    <a href="https://waitinhope.github.io/2021/03/17/20210321-webpack-ji-ben-yong-fa/">https://waitinhope.github.io/2021/03/17/20210321-webpack-ji-ben-yong-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +550,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/flex%E5%B8%83%E5%B1%80/">
-                                    <span class="chip bg-color">flex布局</span>
+                                <a href="/tags/webpakc/">
+                                    <span class="chip bg-color">webpakc</span>
                                 </a>
                             
                         </div>
@@ -744,13 +727,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/17/20210321-webpack-ji-ben-yong-fa/">
+                <a href="/2021/03/18/20210318-es6-bian-liang-lei-xing-kuo-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="webpakc基本用法">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ES6变量类型扩展">
                         
-                        <span class="card-title">webpakc基本用法</span>
+                        <span class="card-title">ES6变量类型扩展</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,14 +744,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/webpack/" class="post-category">
-                                    webpack
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                             
@@ -778,8 +761,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpakc/">
-                        <span class="chip bg-color">webpakc</span>
+                    <a href="/tags/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E6%89%A9%E5%B1%95/">
+                        <span class="chip bg-color">变量类型扩展</span>
                     </a>
                     
                 </div>
@@ -793,13 +776,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/15/20210315-html-hua-dong-chuan-tou/">
+                <a href="/2021/03/16/20210316-css-flex-bu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="解决弹框滑动穿透问题">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="flex布局">
                         
-                        <span class="card-title">解决弹框滑动穿透问题</span>
+                        <span class="card-title">flex布局</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -810,14 +793,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/html/" class="post-category">
-                                    html
+                            <a href="/categories/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
@@ -827,8 +810,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%BB%91%E5%8A%A8%E7%A9%BF%E9%80%8F/">
-                        <span class="chip bg-color">滑动穿透</span>
+                    <a href="/tags/flex%E5%B8%83%E5%B1%80/">
+                        <span class="chip bg-color">flex布局</span>
                     </a>
                     
                 </div>
