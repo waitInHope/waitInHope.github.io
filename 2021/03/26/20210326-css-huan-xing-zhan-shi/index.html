@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="filter的学习使用, 前端店小二">
+    <meta name="keywords" content="20210326_css_换行展示, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>filter的学习使用 | 前端店小二</title>
+    <title>20210326_css_换行展示 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">filter的学习使用</h1>
+                    <h1 class="description center-align post-title">20210326_css_换行展示</h1>
                 </div>
             </div>
         </div>
@@ -432,10 +432,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/filter/">
-                                <span class="chip bg-color">filter</span>
-                            </a>
-                        
                             <a href="/tags/css/">
                                 <span class="chip bg-color">css</span>
                             </a>
@@ -461,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-21
+                    2021-03-26
                 </div>
                 
 
@@ -482,7 +478,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称"><a href="#引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称" class="headerlink" title="引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称"></a>引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称</h3><h4 id="1-如果字数太多超出了规定的行数怎么处理？"><a href="#1-如果字数太多超出了规定的行数怎么处理？" class="headerlink" title="1.如果字数太多超出了规定的行数怎么处理？"></a>1.如果字数太多超出了规定的行数怎么处理？</h4><p>​    先说一下我最开始处理逻辑，就是先根据UI计算出规定行数内最多可以展示多少个字符，然后使用JS去控制显示的字符数量，如果超出了最大值就在内容后面补充省略号</p>
+<p>​    这种方法弊端挺多的，首先如果根据字数统计的话，不同字体、字母、数字占位大小不同，导致最后添加省略号的效果差强人意，其次也是最重要的，如果默认换行的只是中文字符，如果是数字的话即使规定的了div的宽度也会超出挤在一行显示。</p>
+<p>​    后来问了同事才发现css有专门的处理这种需求的方法，不过并不在css标准规范里，不过主流的浏览器也都支持，这里在不考虑兼容性的前提下说说相关语法。</p>
+<pre class=" language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span> -webkit-box<span class="token punctuation">;</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>  // 英文字母也进行折行处理
+<span class="token property">-webkit-orient</span><span class="token punctuation">:</span> vertical<span class="token punctuation">;</span>
+<span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p>这样就可以达到文字内容如果超出3行就显示省略号的效果，而且也没有改变原有内容，很好的符合预期效果</p>
+
                 
             </div>
             <hr/>
@@ -498,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">张振东</a>
+                    <a href="/about" rel="external nofollow noreferrer">Zhang Zhendong</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -508,7 +515,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/03/21/20210319-css-filter/">https://waitinhope.github.io/2021/03/21/20210319-css-filter/</a>
+                    <a href="https://waitinhope.github.io/2021/03/26/20210326-css-huan-xing-zhan-shi/">https://waitinhope.github.io/2021/03/26/20210326-css-huan-xing-zhan-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -521,7 +528,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">张振东</a>
+                    <a href="/about" target="_blank">Zhang Zhendong</a>
                     !
                 </span>
             </div>
@@ -545,10 +552,6 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/filter/">
-                                    <span class="chip bg-color">filter</span>
-                                </a>
                             
                                 <a href="/tags/css/">
                                     <span class="chip bg-color">css</span>
@@ -723,9 +726,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/26/20210326-css-huan-xing-zhan-shi/">
                     <div class="card-image">
@@ -743,9 +747,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -758,6 +762,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -776,13 +781,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/20/20210320-http-kua-yu-fang-wen/">
+                <a href="/2021/03/21/20210319-css-filter/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="跨域访问">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="filter的学习使用">
                         
-                        <span class="card-title">跨域访问</span>
+                        <span class="card-title">filter的学习使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -793,14 +798,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/http/" class="post-category">
-                                    http
+                            <a href="/categories/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
@@ -810,8 +815,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE/">
-                        <span class="chip bg-color">跨域访问</span>
+                    <a href="/tags/filter/">
+                        <span class="chip bg-color">filter</span>
+                    </a>
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>

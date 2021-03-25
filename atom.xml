@@ -6,7 +6,7 @@
   <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
   
   <link href="https://waitinhope.github.io/"/>
-  <updated>2021-03-20T18:20:07.336Z</updated>
+  <updated>2021-03-25T17:49:37.256Z</updated>
   <id>https://waitinhope.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20210326_css_换行展示</title>
+    <link href="https://waitinhope.github.io/2021/03/26/20210326-css-huan-xing-zhan-shi/"/>
+    <id>https://waitinhope.github.io/2021/03/26/20210326-css-huan-xing-zhan-shi/</id>
+    <published>2021-03-25T17:27:22.000Z</published>
+    <updated>2021-03-25T17:49:37.256Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称&quot;&gt;&lt;a href=&quot;#引言：最近遇到一单需求，要求在页面展示一个订单列表，每个订单只显示一行的商户名称和2行单品名称&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="css" scheme="https://waitinhope.github.io/categories/css/"/>
+    
+    
+    <category term="css" scheme="https://waitinhope.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>filter的学习使用</title>
