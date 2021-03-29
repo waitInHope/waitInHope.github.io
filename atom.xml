@@ -6,7 +6,7 @@
   <link href="https://waitinhope.github.io/atom.xml" rel="self"/>
   
   <link href="https://waitinhope.github.io/"/>
-  <updated>2021-03-25T17:49:37.256Z</updated>
+  <updated>2021-03-29T17:29:57.740Z</updated>
   <id>https://waitinhope.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20210330_java_加密加签</title>
+    <link href="https://waitinhope.github.io/2021/03/30/20210330-java-jia-mi-jia-qian/"/>
+    <id>https://waitinhope.github.io/2021/03/30/20210330-java-jia-mi-jia-qian/</id>
+    <published>2021-03-29T16:51:23.000Z</published>
+    <updated>2021-03-29T17:29:57.740Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;引言：这篇文章主要用来记录我的工作心得，当一个APP运营到一定规模的时候，会考虑引入其他的第三方APP来达到客户引流的目的，进一步增加APP的日活和月活（日活跃人数和月活跃人数）&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://waitinhope.github.io/categories/java/"/>
+    
+    
+    <category term="sm4" scheme="https://waitinhope.github.io/tags/sm4/"/>
+    
+    <category term="sm2" scheme="https://waitinhope.github.io/tags/sm2/"/>
+    
+    <category term="AES" scheme="https://waitinhope.github.io/tags/AES/"/>
+    
+    <category term="RSA" scheme="https://waitinhope.github.io/tags/RSA/"/>
+    
+  </entry>
   
   <entry>
     <title>20210326_css_换行展示</title>
