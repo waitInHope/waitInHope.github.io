@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="20210330_java_加密加签, 前端店小二">
+    <meta name="keywords" content="20210525_浏览器_渲染机制, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>20210330_java_加密加签 | 前端店小二</title>
+    <title>20210525_浏览器_渲染机制 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">20210330_java_加密加签</h1>
+                    <h1 class="description center-align post-title">20210525_浏览器_渲染机制</h1>
                 </div>
             </div>
         </div>
@@ -432,20 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/sm4/">
-                                <span class="chip bg-color">sm4</span>
+                            <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%BC%E8%88%AA/">
+                                <span class="chip bg-color">浏览器导航</span>
                             </a>
                         
-                            <a href="/tags/sm2/">
-                                <span class="chip bg-color">sm2</span>
-                            </a>
-                        
-                            <a href="/tags/AES/">
-                                <span class="chip bg-color">AES</span>
-                            </a>
-                        
-                            <a href="/tags/RSA/">
-                                <span class="chip bg-color">RSA</span>
+                            <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/">
+                                <span class="chip bg-color">浏览器渲染</span>
                             </a>
                         
                     </div>
@@ -456,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java/" class="post-category">
-                                java
+                            <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" class="post-category">
+                                浏览器
                             </a>
                         
                     </div>
@@ -469,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-05-25
                 </div>
                 
 
@@ -490,12 +482,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="引言：这篇文章主要用来记录我的工作心得，当一个APP运营到一定规模的时候，会考虑引入其他的第三方APP来达到客户引流的目的，进一步增加APP的日活和月活（日活跃人数和月活跃人数）"><a href="#引言：这篇文章主要用来记录我的工作心得，当一个APP运营到一定规模的时候，会考虑引入其他的第三方APP来达到客户引流的目的，进一步增加APP的日活和月活（日活跃人数和月活跃人数）" class="headerlink" title="引言：这篇文章主要用来记录我的工作心得，当一个APP运营到一定规模的时候，会考虑引入其他的第三方APP来达到客户引流的目的，进一步增加APP的日活和月活（日活跃人数和月活跃人数）"></a>引言：这篇文章主要用来记录我的工作心得，当一个APP运营到一定规模的时候，会考虑引入其他的第三方APP来达到客户引流的目的，进一步增加APP的日活和月活（日活跃人数和月活跃人数）</h3><p>​    在我负责的对接第三方过程，与支付宝的过程类似，都用到了对称加密和非对称加密数据的算法，关于这两个算法我先简要介绍一下，对称加密算法就是同一个秘钥既可以用于加密，也可以用于解密，可以实现双向的数据转换，这也是一种可逆算法。</p>
-<p>​    国际上最常见的对称加密算法是AES(Advanced Encrypt Standard 高级加密标准)，最常见的非对称加密算法是RSA(以当初发明这种算法的三名科学家的名字首字母命名)，RSA采用的秘钥越长越安全，目前公认的是2048位及以上的秘钥是安全的。这两种算法的具体实现方式可以去网上搜，各种编程语言的实现版本都有。</p>
-<p>​    这里要说一下国内通用的加密算法，也就是SM2(<strong>非对称加密</strong>)，SM4(<strong>对称加密</strong>)，SM3(…<em>国产哈希算法</em>)，至于具体的用法，下面以我自身的经验出发进行讲解</p>
-<p>​    首先针对与第三方进行交换的数据，为了避免数据在网络传输过程中被劫持从而导致信息泄露，需要对数据进行加密，这是生产上所有APP都必须重视的一个问题，不仅如此，还要防止数据在传输过程中被篡改，要对传输数据进行加签验证数据的准确性。</p>
-<p>​    因为要使用非对称加密算法，所以假设我的手上有一对公私钥<strong>c_public</strong>和<strong>c_private</strong>，等待交互的第三方手上也有一对公私钥<strong>d_public</strong>和<strong>d_private</strong>。现在有一个<strong>源数据串A</strong>需要发送给第三方，需要先对源数据进行加签，使用SM3算法<strong>生成签值B</strong>并且拼接在源数据后面形成<strong>新的数据串AB</strong>(SM3算法并不需要秘钥)，再针对这串数据使用第三方公钥<strong>d_public和SM4</strong>加密生成加密后的<strong>字符串cipher以及对应的秘钥key和偏移量iv</strong>，最后使用第三方公钥<strong>d_public和SM2</strong>针对key和iv分别进行加密得到<strong>new_key和new_iv</strong>，将这三个值<strong>cipher、new_key、new_iv</strong>采用https协议通过互联网送到第三方手中，而第三方解密的过程就是一个对应的反过程。先使用第三方的私钥<strong>d_private针对new_key和new_iv进行SM2解密得到key和iv</strong>，然后根据第三方公钥<strong>d_public和SM4算法以及cipher、key、iv解密得到原本的字符串AB</strong>，最后是验签的过程，因为SM3算法是一个不可逆算法，所以使用<strong>SM3对A串再进行加密得到一个new_B数据串</strong>，<strong>比较B和new_B</strong>，如果<strong>两个值相等</strong>就表示<strong>验签成功</strong>，数据在传输过程中没有发生更改。第三方可以信任收到的数据并进行后续的业务逻辑处理。</p>
-
+                <h3 id="浏览器渲染机制"><a href="#浏览器渲染机制" class="headerlink" title="浏览器渲染机制"></a>浏览器渲染机制</h3><p>​    作为一名前端开发，不可避免的需要了解浏览器的页面渲染机制，知道自己编写的代码是通过怎样的处理最终呈现到页面上的，这里我简要分享一下自己的学习总结。</p>
+<h5 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h5><p><strong>进程</strong>：操作系统分配资源和运行的最小单位</p>
+<p><strong>线程</strong>：程序执行的最小单位</p>
+<p>上述是进程和线程的标准定义，其实可以形象得把进程看成一个舞台，线程是舞台上的演员，舞台提供演员所需要的资源，而且，也表明一个进程可以包含一个或多个线程，进程之间通过**IPC(Inter Process Communication)**通信</p>
+<p><strong>帧率</strong>：1秒内显示画面的次数，60**fps(frames per second)**才能让人感觉流畅</p>
+<h4 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a>浏览器是多进程的</h4><p>浏览器主要由<strong>浏览器进程</strong>、<strong>渲染进程</strong>、<strong>GPU进程</strong>组成，从输入一个URL到页面渲染的过程大致可以分为三个阶段：<strong>导航、渲染、呈现</strong></p>
+<h3 id="导航阶段"><a href="#导航阶段" class="headerlink" title="导航阶段"></a>导航阶段</h3><p>1.<strong>处理用户输入</strong>：<strong>浏览器进程的UI线程</strong>收到用户输入并判断用户输入的是URL还是关键词，如果是关键词则传给浏览器的搜索引擎(这里不做具体讨论)，如果是URL的话，则会将URL转交给<strong>网络线程</strong>，然后进行DNS域名解析、TCP三次握手与服务器建立连接、拿到响应数据</p>
+<p>2.<strong>处理服务器返回数据</strong>：<strong>网络线程</strong>读取响应头的<strong>content-type判断报文类型</strong>并<strong>检查报文的安全性(SafeBrowsing)<strong>，确认响应报文安全后查找资源准备就绪的渲染进程，</strong>浏览器进程</strong>发送IPC给<strong>渲染进程</strong>进行确认</p>
+<p>3.<strong>导航结束</strong>：<strong>渲染进程</strong>接收数据并回复<strong>浏览器进程</strong>确认提交，<strong>浏览器进程</strong>就会把地址栏、标签、历史记录更新，导航流程结束</p>
+<h3 id="渲染阶段"><a href="#渲染阶段" class="headerlink" title="渲染阶段"></a>渲染阶段</h3><p>1.生成<strong>DOM树</strong>：<strong>渲染进程的主线程(DOM)<strong>拿到响应数据后解析html并生成DOM树，创建document对象，遇到css、图片资源就会进行加载，</strong>遇到JS文件会被阻塞</strong></p>
+<p>2.生成<strong>CSSOM树</strong>：**渲染进程的主线程(Style)**解析CSS，生成CSSOM树，确定每个DOM节点对应的样式</p>
+<p>3.生成<strong>layout树</strong>：**渲染进程的主线程(Layout)**根据DOM和CSSOM生成只包含可见元素的布局树</p>
+<p>4.生成<strong>layer树</strong>：**渲染进程的主线程(Layer)**为了实现3D转换、页面滚动、z-index等效果生成图层树</p>
+<p>5.生成<strong>绘制顺序表</strong>：**渲染进程的主线程(Paint)**将拆分的多条绘制指令进行排序，生成绘制顺序表</p>
+<p>6.生成<strong>合成帧</strong>：<strong>渲染进程的主线程</strong>将绘制顺序表交给<strong>合成线程</strong>，合成线程将大图层的<strong>向量图</strong>进行拆分并交给<strong>栅格线程</strong>进行栅格化，转化成<strong>位图</strong>，生成<strong>合成帧</strong></p>
+<h3 id="呈现"><a href="#呈现" class="headerlink" title="呈现"></a>呈现</h3><p><strong>渲染进程</strong>通过IPC将合成帧传给<strong>GPU进程</strong>，由GPU进程最终将合成帧显示在屏幕上</p>
+<h5 id="优化手段"><a href="#优化手段" class="headerlink" title="优化手段"></a>优化手段</h5><p>避免JS阻塞：1.将<script>标签放到底部</p>
+<p>2.使用async、defer属性</p>
+<script async>  // js加载完成后立即执行js
+<script defer>  // js加载完成后顺序执行js</script></p>
                 
             </div>
             <hr/>
@@ -521,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/03/30/20210330-java-jia-mi-jia-qian/">https://waitinhope.github.io/2021/03/30/20210330-java-jia-mi-jia-qian/</a>
+                    <a href="https://waitinhope.github.io/2021/05/25/20210525-liu-lan-qi-xuan-ran-ji-zhi/">https://waitinhope.github.io/2021/05/25/20210525-liu-lan-qi-xuan-ran-ji-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,20 +565,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/sm4/">
-                                    <span class="chip bg-color">sm4</span>
+                                <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%BC%E8%88%AA/">
+                                    <span class="chip bg-color">浏览器导航</span>
                                 </a>
                             
-                                <a href="/tags/sm2/">
-                                    <span class="chip bg-color">sm2</span>
-                                </a>
-                            
-                                <a href="/tags/AES/">
-                                    <span class="chip bg-color">AES</span>
-                                </a>
-                            
-                                <a href="/tags/RSA/">
-                                    <span class="chip bg-color">RSA</span>
+                                <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/">
+                                    <span class="chip bg-color">浏览器渲染</span>
                                 </a>
                             
                         </div>
@@ -744,9 +742,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05/25/20210525-liu-lan-qi-xuan-ran-ji-zhi/">
                     <div class="card-image">
@@ -764,9 +763,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -779,6 +778,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -801,13 +801,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/26/20210326-css-huan-xing-zhan-shi/">
+                <a href="/2021/03/30/20210330-java-jia-mi-jia-qian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="20210326_css_换行展示">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="20210330_java_加密加签">
                         
-                        <span class="card-title">20210326_css_换行展示</span>
+                        <span class="card-title">20210330_java_加密加签</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -818,14 +818,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/css/" class="post-category">
-                                    css
+                            <a href="/categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
@@ -835,8 +835,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/sm4/">
+                        <span class="chip bg-color">sm4</span>
+                    </a>
+                    
+                    <a href="/tags/sm2/">
+                        <span class="chip bg-color">sm2</span>
+                    </a>
+                    
+                    <a href="/tags/AES/">
+                        <span class="chip bg-color">AES</span>
+                    </a>
+                    
+                    <a href="/tags/RSA/">
+                        <span class="chip bg-color">RSA</span>
                     </a>
                     
                 </div>
