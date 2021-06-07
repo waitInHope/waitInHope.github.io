@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="20210525_浏览器_渲染机制, 前端店小二">
+    <meta name="keywords" content="20210608_浏览器_缓存机制, 前端店小二">
     <meta name="description" content="分享前端知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>20210525_浏览器_渲染机制 | 前端店小二</title>
+    <title>20210608_浏览器_缓存机制 | 前端店小二</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">20210525_浏览器_渲染机制</h1>
+                    <h1 class="description center-align post-title">20210608_浏览器_缓存机制</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%BC%E8%88%AA/">
-                                <span class="chip bg-color">浏览器导航</span>
+                            <a href="/tags/%E5%BC%BA%E5%88%B6%E7%BC%93%E5%AD%98/">
+                                <span class="chip bg-color">强制缓存</span>
                             </a>
                         
-                            <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/">
-                                <span class="chip bg-color">浏览器渲染</span>
+                            <a href="/tags/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/">
+                                <span class="chip bg-color">协商缓存</span>
                             </a>
                         
                     </div>
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-25
+                    2021-06-08
                 </div>
                 
 
@@ -482,32 +482,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="浏览器渲染机制"><a href="#浏览器渲染机制" class="headerlink" title="浏览器渲染机制"></a>浏览器渲染机制</h3><p>​    作为一名前端开发，不可避免的需要了解浏览器的页面渲染机制，知道自己编写的代码是通过怎样的处理最终呈现到页面上的，这里我简要分享一下自己的学习总结。</p>
-<h5 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h5><p><strong>进程</strong>：操作系统分配资源和运行的最小单位</p>
-<p><strong>线程</strong>：程序执行的最小单位</p>
-<p>上述是进程和线程的标准定义，其实可以形象得把进程看成一个舞台，线程是舞台上的演员，舞台提供演员所需要的资源，而且，也表明一个进程可以包含一个或多个线程，进程之间通过**IPC(Inter Process Communication)**通信</p>
-<p><strong>帧率</strong>：1秒内显示画面的次数，60**fps(frames per second)**才能让人感觉流畅</p>
-<h4 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a>浏览器是多进程的</h4><p>浏览器主要由<strong>浏览器进程</strong>、<strong>渲染进程</strong>、<strong>GPU进程</strong>组成，从输入一个URL到页面渲染的过程大致可以分为三个阶段：<strong>导航、渲染、呈现</strong></p>
-<h3 id="导航阶段"><a href="#导航阶段" class="headerlink" title="导航阶段"></a>导航阶段</h3><p>1.<strong>处理用户输入</strong>：<strong>浏览器进程的UI线程</strong>收到用户输入并判断用户输入的是URL还是关键词，如果是关键词则传给浏览器的搜索引擎(这里不做具体讨论)，如果是URL的话，则会将URL转交给<strong>网络线程</strong>，然后进行DNS域名解析、TCP三次握手与服务器建立连接、拿到响应数据</p>
-<p>2.<strong>处理服务器返回数据</strong>：<strong>网络线程</strong>读取响应头的<strong>content-type判断报文类型</strong>并<strong>检查报文的安全性(SafeBrowsing)<strong>，确认响应报文安全后查找资源准备就绪的渲染进程，</strong>浏览器进程</strong>发送IPC给<strong>渲染进程</strong>进行确认</p>
-<p>3.<strong>导航结束</strong>：<strong>渲染进程</strong>接收数据并回复<strong>浏览器进程</strong>确认提交，<strong>浏览器进程</strong>就会把地址栏、标签、历史记录更新，导航流程结束</p>
-<h3 id="渲染阶段"><a href="#渲染阶段" class="headerlink" title="渲染阶段"></a>渲染阶段</h3><p>1.生成<strong>DOM树</strong>：<strong>渲染进程的主线程(DOM)<strong>拿到响应数据后解析html并生成DOM树，创建document对象，遇到css、图片资源就会进行加载，</strong>遇到JS文件会被阻塞</strong></p>
-<p>2.生成<strong>CSSOM树</strong>：**渲染进程的主线程(Style)**解析CSS，生成CSSOM树，确定每个DOM节点对应的样式</p>
-<p>3.生成<strong>layout树</strong>：**渲染进程的主线程(Layout)**根据DOM和CSSOM生成只包含可见元素的布局树</p>
-<p>4.生成<strong>layer树</strong>：**渲染进程的主线程(Layer)**为了实现3D转换、页面滚动、z-index等效果生成图层树</p>
-<p>5.生成<strong>绘制顺序表</strong>：**渲染进程的主线程(Paint)**将拆分的多条绘制指令进行排序，生成绘制顺序表</p>
-<p>6.生成<strong>合成帧</strong>：<strong>渲染进程的主线程</strong>将绘制顺序表交给<strong>合成线程</strong>，合成线程将大图层的<strong>向量图</strong>进行拆分并交给<strong>栅格线程</strong>进行栅格化，转化成<strong>位图</strong>，生成<strong>合成帧</strong></p>
-<h3 id="呈现"><a href="#呈现" class="headerlink" title="呈现"></a>呈现</h3><p><strong>渲染进程</strong>通过IPC将合成帧传给<strong>GPU进程</strong>，由GPU进程最终将合成帧显示在屏幕上</p>
-<h5 id="优化手段"><a href="#优化手段" class="headerlink" title="优化手段"></a>优化手段</h5><p>避免JS阻塞：1.将<script>标签放到底部</p>
-<p>2.使用async、defer属性</p>
-<script async>  // js加载完成后立即执行js
-<script defer>  // js加载完成后顺序执行js
+                <h4 id="1-报文格式"><a href="#1-报文格式" class="headerlink" title="1.报文格式"></a>1.报文格式</h4><table>
+<thead>
+<tr>
+<th align="left">请求报文 request</th>
+<th align="left">响应报文 response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Post  URL  HTTP/1.1  (请求行)</td>
+<td align="left">HTTP/1.1  200  OK  (状态行)</td>
+</tr>
+<tr>
+<td align="left"><em>// http头</em><br>host: IP/URL<br>origin: URL<br>cookie: XXX<br>connection: keep-alive<br>if-none-match: 唯一标识<br>if-modified-since: GMT时间</td>
+<td align="left"><em>// http头</em><br>content-Type: text/html<br>server: 服务器域名<br>catch-control: max-age=500(相对时间)<br>expires: GMT时间(绝对时间)<br>etag:服务器生成的唯一标识<br>last-modified: GMT时间(绝对时间)</td>
+</tr>
+<tr>
+<td align="left">name=Tom(报文主体)</td>
+<td align="left">Dear Tom(报文主体)</td>
+</tr>
+</tbody></table>
+<h4 id="2-浏览器缓存机制（特别重要的两句话）"><a href="#2-浏览器缓存机制（特别重要的两句话）" class="headerlink" title="2.浏览器缓存机制（特别重要的两句话）"></a>2.浏览器缓存机制（特别重要的两句话）</h4><p>1.浏览器请求接口前会去浏览器缓存查找请求结果和缓存标志（取）</p>
+<p>2.浏览器拿到接口响应后会去浏览器缓存存储请求结果和缓存标志（存）</p>
+<h4 id="3-缓存过程分析"><a href="#3-缓存过程分析" class="headerlink" title="3.缓存过程分析"></a>3.缓存过程分析</h4><p>浏览器-&gt;强制缓存-&gt;协商缓存-&gt;服务器(大致过程)</p>
+<h4 id="4-浏览器缓存存放位置"><a href="#4-浏览器缓存存放位置" class="headerlink" title="4.浏览器缓存存放位置"></a>4.浏览器缓存存放位置</h4><table>
+<thead>
+<tr>
+<th align="left">from memory cache(内存缓存)</th>
+<th>from disk cache(硬盘缓存)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">特点：<br>快速读取(将解析后的文件存入内存)<br>时效性(一旦进程关闭，内存就将清空)</td>
+<td>特点：<br>读取缓存时要对硬盘进行IO操作并解析该缓存<br>读取复杂、速度慢</td>
+</tr>
+<tr>
+<td align="left">js、图片等文件解析后放入内存</td>
+<td>css文件</td>
+</tr>
+</tbody></table>
 
-
-
-减少DOM操作：事件委托机制
-
-减少内存占用：避免死循环和大的对象赋值</script></p>
                 
             </div>
             <hr/>
@@ -533,7 +547,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://waitinhope.github.io/2021/05/25/20210525-liu-lan-qi-xuan-ran-ji-zhi/">https://waitinhope.github.io/2021/05/25/20210525-liu-lan-qi-xuan-ran-ji-zhi/</a>
+                    <a href="https://waitinhope.github.io/2021/06/08/20210608-liu-lan-qi-huan-cun-ji-zhi/">https://waitinhope.github.io/2021/06/08/20210608-liu-lan-qi-huan-cun-ji-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,12 +585,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%BC%E8%88%AA/">
-                                    <span class="chip bg-color">浏览器导航</span>
+                                <a href="/tags/%E5%BC%BA%E5%88%B6%E7%BC%93%E5%AD%98/">
+                                    <span class="chip bg-color">强制缓存</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/">
-                                    <span class="chip bg-color">浏览器渲染</span>
+                                <a href="/tags/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/">
+                                    <span class="chip bg-color">协商缓存</span>
                                 </a>
                             
                         </div>
@@ -748,9 +762,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/06/08/20210608-liu-lan-qi-huan-cun-ji-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="20210608_浏览器_缓存机制">
+                        
+                        <span class="card-title">20210608_浏览器_缓存机制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" class="post-category">
+                                    浏览器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%BA%E5%88%B6%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">强制缓存</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">协商缓存</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/05/27/20210527-vue-cha-cao/">
                     <div class="card-image">
@@ -768,9 +837,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -788,67 +857,6 @@
                     
                     <a href="/tags/slot/">
                         <span class="chip bg-color">slot</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/30/20210330-java-jia-mi-jia-qian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="20210330_java_加密加签">
-                        
-                        <span class="card-title">20210330_java_加密加签</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/sm4/">
-                        <span class="chip bg-color">sm4</span>
-                    </a>
-                    
-                    <a href="/tags/sm2/">
-                        <span class="chip bg-color">sm2</span>
-                    </a>
-                    
-                    <a href="/tags/AES/">
-                        <span class="chip bg-color">AES</span>
-                    </a>
-                    
-                    <a href="/tags/RSA/">
-                        <span class="chip bg-color">RSA</span>
                     </a>
                     
                 </div>

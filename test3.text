@@ -1,0 +1,8 @@
+
+设置数组的头尾下标  start 和 end
+
+start从左往右遍历，如果arr[start]是基数则start++
+                  否则 开始end从右往左遍历，如果arr[end]是偶数则end--，
+                                          否则交换arr[start] 和 arr[end]并重新从start往右遍历
+
+直到start == end 结束循环，得到结果
