@@ -498,16 +498,14 @@
 <p>5.生成<strong>绘制顺序表</strong>：**渲染进程的主线程(Paint)**将拆分的多条绘制指令进行排序，生成绘制顺序表</p>
 <p>6.生成<strong>合成帧</strong>：<strong>渲染进程的主线程</strong>将绘制顺序表交给<strong>合成线程</strong>，合成线程将大图层的<strong>向量图</strong>进行拆分并交给<strong>栅格线程</strong>进行栅格化，转化成<strong>位图</strong>，生成<strong>合成帧</strong></p>
 <h3 id="呈现"><a href="#呈现" class="headerlink" title="呈现"></a>呈现</h3><p><strong>渲染进程</strong>通过IPC将合成帧传给<strong>GPU进程</strong>，由GPU进程最终将合成帧显示在屏幕上</p>
-<h5 id="优化手段"><a href="#优化手段" class="headerlink" title="优化手段"></a>优化手段</h5><p>避免JS阻塞：1.将<script>标签放到底部</p>
+<h5 id="优化手段"><a href="#优化手段" class="headerlink" title="优化手段"></a>优化手段</h5><p>避免JS阻塞：1.将script标签放到底部</p>
 <p>2.使用async、defer属性</p>
-<script async>  // js加载完成后立即执行js
-<script defer>  // js加载完成后顺序执行js
+<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- &lt;script async>&lt;/script>  js加载完成后立即执行js --></span>
+<span class="token comment" spellcheck="true">&lt;!-- &lt;script defer>&lt;/script>  js加载完成后顺序执行js --></span>
+</code></pre>
+<p>减少DOM操作：事件委托机制</p>
+<p>减少内存占用：避免死循环和大的对象赋值</p>
 
-
-
-减少DOM操作：事件委托机制
-
-减少内存占用：避免死循环和大的对象赋值</script></p>
                 
             </div>
             <hr/>

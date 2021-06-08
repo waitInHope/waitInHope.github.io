@@ -504,7 +504,7 @@
 </tbody></table>
 <h4 id="2-浏览器缓存机制（特别重要的两句话）"><a href="#2-浏览器缓存机制（特别重要的两句话）" class="headerlink" title="2.浏览器缓存机制（特别重要的两句话）"></a>2.浏览器缓存机制（特别重要的两句话）</h4><p>1.浏览器请求接口前会去浏览器缓存查找请求结果和缓存标志（取）</p>
 <p>2.浏览器拿到接口响应后会去浏览器缓存存储请求结果和缓存标志（存）</p>
-<h4 id="3-缓存过程分析"><a href="#3-缓存过程分析" class="headerlink" title="3.缓存过程分析"></a>3.缓存过程分析</h4><p>浏览器-&gt;强制缓存-&gt;协商缓存-&gt;服务器(大致过程)</p>
+<h4 id="3-缓存过程分析"><a href="#3-缓存过程分析" class="headerlink" title="3.缓存过程分析"></a>3.缓存过程分析</h4><p>浏览器-&gt;强制缓存(cache-control、expires)-&gt;协商缓存(if-none-match/etag、if-modified-since/last-modified)-&gt;服务器(大致过程)</p>
 <h4 id="4-浏览器缓存存放位置"><a href="#4-浏览器缓存存放位置" class="headerlink" title="4.浏览器缓存存放位置"></a>4.浏览器缓存存放位置</h4><table>
 <thead>
 <tr>
